@@ -48,11 +48,12 @@ widgets:
       SUGGEST_COMMAND: "/chat reply {message_id}"
       TOOLTIP:
         - "&7Ответить &b{nick}&7: &f{message}"
+
 cooldown:
   seconds: 10
   messages:
   - "&cPlease wait before sending another message.\nYou can chat again in {time} seconds."
   - "&eSlow down! You're chatting too quickly.\nTake a moment and try again in {time} seconds."
   - "&aYou're on cooldown. Take a breather.\nYou can chat again in {time} seconds."
-
+  - "&f█&f█&f█\n&f█&4█&f█\n&f█&4█&f█\n&f█&4█&f█  &cVui lòng đợi &f{time} &cđể\n&f█&f█&f█  &ctrò chuyện lại\n&f█&4█&f█\n&f█&f█&f█"
 

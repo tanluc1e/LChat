@@ -4,6 +4,7 @@ C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\e
 C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Utils\IDUtils.java
 C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Listeners\ChatListener.java
 C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Types\Message\Message.java
+C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Managers\ChatClearCooldown.java
 C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Managers\ConfigManager.java
 C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Managers\ReplySettings.java
 C:\Users\Admin\Desktop\CodingProject\ExtendedChat\src\main\java\me\nitkanikita\extendedchat\Types\WidgetActions\Actions\RunCommandAction.java

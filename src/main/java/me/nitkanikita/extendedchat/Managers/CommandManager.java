@@ -23,13 +23,24 @@ public class CommandManager implements CommandExecutor {
          if (strings[0].equals("reply") && commandSender instanceof Player) {
             Player p = (Player)commandSender;
             Message messageReply = MessageStorage.GetPlayerMessage(strings[1]);
+            if (ChatCooldown.hasCooldown(p)) {
+               long secondsLeft = ChatCooldown.getCooldownSeconds(p);
+               String cooldownMessage = ChatCooldown.getRandomMessage(secondsLeft);
+               if (cooldownMessage != null) {
+                  p.sendMessage(cooldownMessage);
+               }
+               return true; // Prevent further execution of the command
+            }
+
             if (!messageReply.chat.reply) {
                p.spigot().sendMessage(new TextComponent("&с:("));
+            } else if (strings.length < 3) {
+               p.sendMessage("§cYou must provide a reply text.");
             } else {
                StringBuilder StrBuild = new StringBuilder();
 
-               for(int i = 2; i < strings.length; ++i) {
-                  StrBuild.append(strings[i] + " ");
+               for (int i = 2; i < strings.length; ++i) {
+                  StrBuild.append(strings[i]).append(" ");
                }
 
                String msgId = UUID.randomUUID().toString() + this.rnd.nextInt(999);
@@ -37,6 +48,7 @@ public class CommandManager implements CommandExecutor {
                Message message = new Message(p, StrBuild.toString(), messageReply.chat, msgId);
                MessageStorage.AddMessageToStorage(message);
                messageReply.chat.Send(p, message.chat.Parse(StrBuild.toString(), p, msgId), messageReply);
+               ChatCooldown.setCooldown(p);
             }
          }
 
